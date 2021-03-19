@@ -11,9 +11,9 @@
 		13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
+		4F260DE0526190D3511FDD76 /* Pods_testappvoxeet_testappvoxeetTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE9A78496F85EE8EAC803D74 /* Pods_testappvoxeet_testappvoxeetTests.framework */; };
+		67EAB515B75165E78307B132 /* Pods_testappvoxeet.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D2D9745638D95E772D83604 /* Pods_testappvoxeet.framework */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
-		C3AA9627D0FB0547210F2BAD /* libPods-testappvoxeet-testappvoxeetTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CB58A0C33FEC665FF171A07 /* libPods-testappvoxeet-testappvoxeetTests.a */; };
-		DF18DC47A20CB83ED96C086E /* libPods-testappvoxeet.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 632C9D10094EC1D9D50BBFC9 /* libPods-testappvoxeet.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,11 +37,11 @@
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = testappvoxeet/Info.plist; sourceTree = "<group>"; };
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = testappvoxeet/main.m; sourceTree = "<group>"; };
 		4410E06D465A418BA796A1E3 /* Pods-testappvoxeet.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-testappvoxeet.release.xcconfig"; path = "Target Support Files/Pods-testappvoxeet/Pods-testappvoxeet.release.xcconfig"; sourceTree = "<group>"; };
-		4CB58A0C33FEC665FF171A07 /* libPods-testappvoxeet-testappvoxeetTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-testappvoxeet-testappvoxeetTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5D2D9745638D95E772D83604 /* Pods_testappvoxeet.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_testappvoxeet.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5DFCCA1A42A269C559D34763 /* Pods-testappvoxeet-testappvoxeetTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-testappvoxeet-testappvoxeetTests.release.xcconfig"; path = "Target Support Files/Pods-testappvoxeet-testappvoxeetTests/Pods-testappvoxeet-testappvoxeetTests.release.xcconfig"; sourceTree = "<group>"; };
-		632C9D10094EC1D9D50BBFC9 /* libPods-testappvoxeet.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-testappvoxeet.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7F737D09796903E43281A691 /* Pods-testappvoxeet.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-testappvoxeet.debug.xcconfig"; path = "Target Support Files/Pods-testappvoxeet/Pods-testappvoxeet.debug.xcconfig"; sourceTree = "<group>"; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = testappvoxeet/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		AE9A78496F85EE8EAC803D74 /* Pods_testappvoxeet_testappvoxeetTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_testappvoxeet_testappvoxeetTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DEC4664BA4640A45055BED13 /* Pods-testappvoxeet-testappvoxeetTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-testappvoxeet-testappvoxeetTests.debug.xcconfig"; path = "Target Support Files/Pods-testappvoxeet-testappvoxeetTests/Pods-testappvoxeet-testappvoxeetTests.debug.xcconfig"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
@@ -51,7 +51,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C3AA9627D0FB0547210F2BAD /* libPods-testappvoxeet-testappvoxeetTests.a in Frameworks */,
+				4F260DE0526190D3511FDD76 /* Pods_testappvoxeet_testappvoxeetTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -59,7 +59,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DF18DC47A20CB83ED96C086E /* libPods-testappvoxeet.a in Frameworks */,
+				67EAB515B75165E78307B132 /* Pods_testappvoxeet.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -100,8 +100,8 @@
 			isa = PBXGroup;
 			children = (
 				ED297162215061F000B7C4FE /* JavaScriptCore.framework */,
-				632C9D10094EC1D9D50BBFC9 /* libPods-testappvoxeet.a */,
-				4CB58A0C33FEC665FF171A07 /* libPods-testappvoxeet-testappvoxeetTests.a */,
+				5D2D9745638D95E772D83604 /* Pods_testappvoxeet.framework */,
+				AE9A78496F85EE8EAC803D74 /* Pods_testappvoxeet_testappvoxeetTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -161,7 +161,6 @@
 				00E356EB1AD99517003FC87E /* Frameworks */,
 				00E356EC1AD99517003FC87E /* Resources */,
 				7AB64D2852E088CAB841A376 /* [CP] Embed Pods Frameworks */,
-				BEE7A4F987BFCAE12C39042A /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -184,7 +183,6 @@
 				13B07F8E1A680F5B00A75B9A /* Resources */,
 				00DD1BFF1BD5951E006B06BC /* Bundle React Native code and images */,
 				B284B3A0F145A24E3C3659C7 /* [CP] Embed Pods Frameworks */,
-				DFD42B38AB6A09D93B83C5D5 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -321,23 +319,6 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-testappvoxeet/Pods-testappvoxeet-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		BEE7A4F987BFCAE12C39042A /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-testappvoxeet-testappvoxeetTests/Pods-testappvoxeet-testappvoxeetTests-resources-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-testappvoxeet-testappvoxeetTests/Pods-testappvoxeet-testappvoxeetTests-resources-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-testappvoxeet-testappvoxeetTests/Pods-testappvoxeet-testappvoxeetTests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		D3C9A2BE29E3B2B8B8048B15 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -358,23 +339,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		DFD42B38AB6A09D93B83C5D5 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-testappvoxeet/Pods-testappvoxeet-resources-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-testappvoxeet/Pods-testappvoxeet-resources-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-testappvoxeet/Pods-testappvoxeet-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		FD10A7F022414F080027D42C /* Start Packager */ = {

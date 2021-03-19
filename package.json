@@ -10,6 +10,7 @@
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx"
   },
   "dependencies": {
+    "@voxeet/react-native-voxeet-conferencekit": "^0.2.9",
     "react": "17.0.1",
     "react-native": "0.64.0"
   },

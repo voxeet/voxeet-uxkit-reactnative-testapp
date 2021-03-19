@@ -114,7 +114,6 @@
 				DEC4664BA4640A45055BED13 /* Pods-testappvoxeet-testappvoxeetTests.debug.xcconfig */,
 				5DFCCA1A42A269C559D34763 /* Pods-testappvoxeet-testappvoxeetTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};

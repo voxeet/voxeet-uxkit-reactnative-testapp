@@ -26,10 +26,12 @@
    LearnMoreLinks,
    ReloadInstructions,
  } from 'react-native/Libraries/NewAppScreen';
+ import { ConferenceUser, VoxeetSDK } from "@voxeet/react-native-voxeet-conferencekit";
 
  const Section: React.FC<{
    title: string;
  }> = ({children, title}) => {
+
    const isDarkMode = useColorScheme() === 'dark';
    return (
      <View style={styles.sectionContainer}>
@@ -61,6 +63,15 @@
    const backgroundStyle = {
      backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
    };
+
+   VoxeetSDK.initialize("SET_YOUR_APPKEY", "SET_YOUR_APPSECRET")
+   .then(() => VoxeetSDK.connect(new ConferenceUser("","","")))
+   .then(() => VoxeetSDK.create({alias: "alias"}))
+   .then(result => VoxeetSDK.join(result.conferenceId || ""))
+   .then(() => alert("done"))
+   .catch(err => {
+     console.warn(err);
+   })
 
    return (
      <SafeAreaView style={backgroundStyle}>

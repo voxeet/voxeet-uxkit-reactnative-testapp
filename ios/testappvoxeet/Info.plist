@@ -24,6 +24,10 @@
 	<string>1</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>UIViewControllerBasedStatusBarAppearance</key>
+	<false/>
+	<key>LSApplicationCategoryType</key>
+	<string></string>
 	<key>NSAppTransportSecurity</key>
 	<dict>
 		<key>NSExceptionDomains</key>
@@ -55,8 +59,8 @@
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
 	<key>NSMicrophoneUsageDescription</key>
-	<string>The app requires the mic permission to be able to join a conference</string>
+	<string>In order for other participants in conferences to be able to listen to you, please accept this Microphone permission. The app will only use it while being in a conference. And indicator will also display the microphone status.</string>
 	<key>NSCameraUsageDescription</key>
-	<string>The app requires the camera permission to be able to stream the local video</string>
+	<string>In order to display your camera feed to other participants in the conference you join, the app needs access to your Camera. Please let the app access it to enhance your experience using this app.</string>
 </dict>
 </plist>

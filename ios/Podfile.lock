@@ -10,6 +10,8 @@ PODS:
     - React-jsi (= 0.64.0)
     - ReactCommon/turbomodule/core (= 0.64.0)
   - glog (0.3.5)
+  - Permission-Camera (3.0.1):
+    - RNPermissions
   - RCT-Folly (2020.01.13.00):
     - boost-for-react-native
     - DoubleConversion
@@ -267,10 +269,14 @@ PODS:
     - React-cxxreact (= 0.64.0)
     - React-jsi (= 0.64.0)
     - React-perflogger (= 0.64.0)
+  - RNPermissions (3.0.1):
+    - React-Core
+  - RNVectorIcons (8.1.0):
+    - React-Core
   - SDWebImage (5.10.4):
     - SDWebImage/Core (= 5.10.4)
   - SDWebImage/Core (5.10.4)
-  - voxeet-uxkit-reactnative (0.2.9):
+  - voxeet-uxkit-reactnative (0.2.11-beta4):
     - React
     - VoxeetSDK (= 3.1.1)
     - VoxeetUXKit (= 1.4.3)
@@ -285,6 +291,7 @@ DEPENDENCIES:
   - FBLazyVector (from `../node_modules/react-native/Libraries/FBLazyVector`)
   - FBReactNativeSpec (from `../node_modules/react-native/React/FBReactNativeSpec`)
   - glog (from `../node_modules/react-native/third-party-podspecs/glog.podspec`)
+  - Permission-Camera (from `../node_modules/react-native-permissions/ios/Camera`)
   - RCT-Folly (from `../node_modules/react-native/third-party-podspecs/RCT-Folly.podspec`)
   - RCTRequired (from `../node_modules/react-native/Libraries/RCTRequired`)
   - RCTTypeSafety (from `../node_modules/react-native/Libraries/TypeSafety`)
@@ -310,6 +317,8 @@ DEPENDENCIES:
   - React-RCTVibration (from `../node_modules/react-native/Libraries/Vibration`)
   - React-runtimeexecutor (from `../node_modules/react-native/ReactCommon/runtimeexecutor`)
   - ReactCommon/turbomodule/core (from `../node_modules/react-native/ReactCommon`)
+  - RNPermissions (from `../node_modules/react-native-permissions`)
+  - RNVectorIcons (from `../node_modules/react-native-vector-icons`)
   - "voxeet-uxkit-reactnative (from `../node_modules/@voxeet/react-native-voxeet-conferencekit`)"
   - Yoga (from `../node_modules/react-native/ReactCommon/yoga`)
 
@@ -329,6 +338,8 @@ EXTERNAL SOURCES:
     :path: "../node_modules/react-native/React/FBReactNativeSpec"
   glog:
     :podspec: "../node_modules/react-native/third-party-podspecs/glog.podspec"
+  Permission-Camera:
+    :path: "../node_modules/react-native-permissions/ios/Camera"
   RCT-Folly:
     :podspec: "../node_modules/react-native/third-party-podspecs/RCT-Folly.podspec"
   RCTRequired:
@@ -375,6 +386,10 @@ EXTERNAL SOURCES:
     :path: "../node_modules/react-native/ReactCommon/runtimeexecutor"
   ReactCommon:
     :path: "../node_modules/react-native/ReactCommon"
+  RNPermissions:
+    :path: "../node_modules/react-native-permissions"
+  RNVectorIcons:
+    :path: "../node_modules/react-native-vector-icons"
   voxeet-uxkit-reactnative:
     :path: "../node_modules/@voxeet/react-native-voxeet-conferencekit"
   Yoga:
@@ -386,6 +401,7 @@ SPEC CHECKSUMS:
   FBLazyVector: 49cbe4b43e445b06bf29199b6ad2057649e4c8f5
   FBReactNativeSpec: 18a7e7efde2298cf6a665ad77812c53ab34f4fab
   glog: 73c2498ac6884b13ede40eda8228cb1eee9d9d62
+  Permission-Camera: 0d2d15352e9c54c3ea8686c8c21fb1a9edf3431b
   RCT-Folly: ec7a233ccc97cc556cf7237f0db1ff65b986f27c
   RCTRequired: 2f8cb5b7533219bf4218a045f92768129cf7050a
   RCTTypeSafety: 512728b73549e72ad7330b92f3d42936f2a4de5b
@@ -409,12 +425,14 @@ SPEC CHECKSUMS:
   React-RCTVibration: 0fd6b21751a33cb72fce1a4a33ab9678416d307a
   React-runtimeexecutor: cad74a1eaa53ee6e7a3620231939d8fe2c6afcf0
   ReactCommon: cfe2b7fd20e0dbd2d1185cd7d8f99633fbc5ff05
+  RNPermissions: eb94f9fdc0a8ecd02fcce0676d56ffb1395d41e1
+  RNVectorIcons: 31cebfcf94e8cf8686eb5303ae0357da64d7a5a4
   SDWebImage: c666b97e1fa9c64b4909816a903322018f0a9c84
-  voxeet-uxkit-reactnative: b93ef779c207b65a031233085434167fb2f070ac
+  voxeet-uxkit-reactnative: a5c76a1144e69a68b8ac0b4ebabd8e8a8907d857
   VoxeetSDK: 98c0db66be3ed810f47de6b01bec13a2861ecfa3
   VoxeetUXKit: cd0fdd5fb41a8087c38f2e320f92acd67ce67486
   Yoga: 8c8436d4171c87504c648ae23b1d81242bdf3bbf
 
-PODFILE CHECKSUM: da7bed8a247561689cb25a15cfe3a037a0e64b5e
+PODFILE CHECKSUM: 5dad4f54645a9ed4caa2253c767c03c84093065e
 
 COCOAPODS: 1.10.1

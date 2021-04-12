@@ -8,119 +8,89 @@
  * @format
  */
 
- import React from 'react';
- import {
-   SafeAreaView,
-   ScrollView,
-   StatusBar,
-   StyleSheet,
-   Text,
-   useColorScheme,
-   View,
- } from 'react-native';
+import React, { Component } from 'react';
+import {
+  Appearance,
+  KeyboardAvoidingView,
+  SafeAreaView,
+  ScrollView,
+  StatusBar,
+  Platform,
+  useColorScheme,
+  View,
+} from 'react-native';
 
- import {
-   Colors,
-   DebugInstructions,
-   Header,
-   LearnMoreLinks,
-   ReloadInstructions,
- } from 'react-native/Libraries/NewAppScreen';
- import { ConferenceUser, VoxeetSDK } from "@voxeet/react-native-voxeet-conferencekit";
+import {
+  Colors,
+} from 'react-native/Libraries/NewAppScreen';
+import Initialization from './src/init/Init';
+import VoxeetEnvironment from './src/VoxeetEnvironment';
+import JoinConference from './src/conference/JoinConference';
+import Login from './src/login/Login';
+import ParticipantsView from './src/conference/ParticipantsView';
+import ConferenceControls from './src/conference/ConferenceControls';
 
- const Section: React.FC<{
-   title: string;
- }> = ({children, title}) => {
+export interface Props {
 
-   const isDarkMode = useColorScheme() === 'dark';
-   return (
-     <View style={styles.sectionContainer}>
-       <Text
-         style={[
-           styles.sectionTitle,
-           {
-             color: isDarkMode ? Colors.white : Colors.black,
-           },
-         ]}>
-         {title}
-       </Text>
-       <Text
-         style={[
-           styles.sectionDescription,
-           {
-             color: isDarkMode ? Colors.light : Colors.dark,
-           },
-         ]}>
-         {children}
-       </Text>
-     </View>
-   );
- };
+}
 
- const App = () => {
-   const isDarkMode = useColorScheme() === 'dark';
+export interface State {
 
-   const backgroundStyle = {
-     backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
-   };
+}
 
-   VoxeetSDK.initialize("SET_YOUR_APPKEY", "SET_YOUR_APPSECRET")
-   .then(() => VoxeetSDK.connect(new ConferenceUser("","","")))
-   .then(() => VoxeetSDK.create({alias: "alias"}))
-   .then(result => VoxeetSDK.join(result.conferenceId || ""))
-   .then(() => alert("done"))
-   .catch(err => {
-     console.warn(err);
-   })
+export default class App extends Component<Props, State> {
 
-   return (
-     <SafeAreaView style={backgroundStyle}>
-       <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
-       <ScrollView
-         contentInsetAdjustmentBehavior="automatic"
-         style={backgroundStyle}>
-         <Header />
-         <View
-           style={{
-             backgroundColor: isDarkMode ? Colors.black : Colors.white,
-           }}>
-           <Section title="Step One">
-             Edit <Text style={styles.highlight}>App.js</Text> to change this
-             screen and then come back to see your edits.
-           </Section>
-           <Section title="See Your Changes">
-             <ReloadInstructions />
-           </Section>
-           <Section title="Debug">
-             <DebugInstructions />
-           </Section>
-           <Section title="Learn More">
-             Read the docs to discover what to do next:
-           </Section>
-           <LearnMoreLinks />
-         </View>
-       </ScrollView>
-     </SafeAreaView>
-   );
- };
+  componentDidMount() {
+    VoxeetEnvironment.addListener("initialization", this.onInit);
+    VoxeetEnvironment.addListener("connect", this.onInit);
+  }
 
- const styles = StyleSheet.create({
-   sectionContainer: {
-     marginTop: 32,
-     paddingHorizontal: 24,
-   },
-   sectionTitle: {
-     fontSize: 24,
-     fontWeight: '600',
-   },
-   sectionDescription: {
-     marginTop: 8,
-     fontSize: 18,
-     fontWeight: '400',
-   },
-   highlight: {
-     fontWeight: '700',
-   },
- });
+  componentWillUnmount() {
+    VoxeetEnvironment.removeListener("initialization", this.onInit);
+    VoxeetEnvironment.removeListener("connect", this.onInit);
+  }
 
- export default App;
+  private onInit = () => {
+    this.forceUpdate();
+  }
+
+  renderInitialized() {
+    return (<>
+      <Login />
+      <View style={{height: 16}} />
+      <JoinConference />
+      <View style={{height: 16}} />
+      <ConferenceControls />
+      <View style={{height: 16}} />
+      <ParticipantsView />
+    </>);
+  }
+
+  render() {
+    const isDarkMode = Appearance.getColorScheme() === 'dark';
+
+    const backgroundStyle = {
+      height: "100%",
+      backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
+    };
+
+    return (
+      <SafeAreaView style={backgroundStyle}>
+        <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
+        <KeyboardAvoidingView
+          style={{ flex: 1 }}
+          behavior= {(Platform.OS === 'ios')? "padding" : undefined}>
+          <ScrollView
+            contentInsetAdjustmentBehavior="automatic"
+            style={backgroundStyle}>
+            {
+              !VoxeetEnvironment.initialized
+              ? <Initialization />
+              : this.renderInitialized()
+            }
+          </ScrollView>
+        </KeyboardAvoidingView>
+      </SafeAreaView>
+    );
+  }
+}

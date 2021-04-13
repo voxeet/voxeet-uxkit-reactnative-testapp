@@ -1,6 +1,6 @@
 import { ConferenceStatusUpdatedEvent, ConferenceUser, VoxeetEvents, VoxeetSDK } from "@voxeet/react-native-voxeet-conferencekit";
 import { ConferenceStatus } from "@voxeet/react-native-voxeet-conferencekit/dist/events/ConferenceStatusUpdatedEvent";
-import { ParticipantAddedEvent, ParticipantUpdatedEvent } from "@voxeet/react-native-voxeet-conferencekit/dist/events/ConferenceUsersEvent";
+import { ParticipantAddedEvent, ParticipantUpdatedEvent, StreamAddedEvent, StreamUpdatedEvent, StreamRemovedEvent } from "@voxeet/react-native-voxeet-conferencekit/dist/events/ConferenceUsersEvent";
 import Participant from "@voxeet/react-native-voxeet-conferencekit/dist/types/Participant";
 import { EventEmitter2, Listener } from "eventemitter2";
 import { inConference } from "./Utils";
@@ -18,6 +18,9 @@ interface EventMap {
   ["ConferenceStatusUpdatedEvent"]: ConferenceStatusUpdatedEvent;
   ["ParticipantAddedEvent"]: ParticipantAddedEvent;
   ["ParticipantUpdatedEvent"]: ParticipantUpdatedEvent;
+  ["StreamAddedEvent"]: StreamAddedEvent;
+  ["StreamRemovedEvent"]: StreamRemovedEvent;
+  ["StreamUpdatedEvent"]: StreamUpdatedEvent;
 }
 
 
@@ -35,6 +38,9 @@ class VoxeetEnvironment {
     this._events.addListener("ConferenceStatusUpdatedEvent", this.onConferenceStatus);
     this._events.addListener("ParticipantAddedEvent", e => this.emit("ParticipantAddedEvent", e));
     this._events.addListener("ParticipantUpdatedEvent", e => this.emit("ParticipantUpdatedEvent", e));
+    this._events.addListener("StreamAddedEvent", e => this.emit("StreamAddedEvent", e));
+    this._events.addListener("StreamUpdatedEvent", e => this.emit("StreamUpdatedEvent", e));
+    this._events.addListener("StreamRemovedEvent", e => this.emit("StreamRemovedEvent", e));
   }
 
   public currentJoinedConference(): ConferenceStatusUpdatedEvent|undefined {
@@ -116,7 +122,6 @@ class VoxeetEnvironment {
       console.error("onConferenceStatus", e);
     }
   }
-
 
   private emit<K extends keyof EventMap>(type: K, event: EventMap[K]) {
     return this.emitter.emit(type, event);

@@ -29,6 +29,7 @@ import JoinConference from './src/conference/JoinConference';
 import Login from './src/login/Login';
 import ParticipantsView from './src/conference/ParticipantsView';
 import ConferenceControls from './src/conference/ConferenceControls';
+import ParticipantInviteView from './src/conference/inside/ParticipantInvite';
 
 export interface Props {
 
@@ -63,6 +64,8 @@ export default class App extends Component<Props, State> {
       <ConferenceControls />
       <View style={{height: 16}} />
       <ParticipantsView />
+      <View style={{height: 16}} />
+      <ParticipantInviteView />
     </>);
   }
 

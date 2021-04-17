@@ -35,27 +35,32 @@ npm install
 
 ### Android
 
-1. Two possibilities regarding the libraries of libc++_shared here :
 
-    - **Option 1**
+Fix an incompatibility with current react native embedded c++_shared : patch the AAR directly to remove the outdated libc++_shared via
 
-    Patch the AAR directly to remove the outdated libc++_shared using :
+```
+bash ./node_modules/@voxeet/react-native-voxeet-conferenceki/patch.react.aar.sh
+```
 
-    ```
-    bash ./node_modules/@voxeet/react-native-voxeet-conferenceki/patch.react.aar.sh
-    ```
+## Android - Enable FCM
 
-    - **Option 2**
+**Create a Firebase project**
 
-    If patching is an issue for you, a pickFirst option must be used for the libc++ shared object but it may introduce some issues in some versions of React-Native due to different ABIs :
+- navigate to `https://console.firebase.google.com/`
+- create a new project
+- Then configure the environment depending on the platform you want to use (if iOS and Android are required, use the same project)
 
-    ```gradle
-    android { //WARNING : don't use it if you already patched the react native env using above script
-        packagingOptions {
-            pickFirst '**/armeabi-v7a/libc++_shared.so'
-            pickFirst '**/x86/libc++_shared.so'
-            pickFirst '**/arm64-v8a/libc++_shared.so'
-            pickFirst '**/x86_64/libc++_shared.so'
-        }
-    }
-    ```
+
+**Add the android app declaration**
+
+- create your own package name, change `com.testappvoxeet` to `your.own.package` in the `android/app/build.gradle` file
+- from the dashboard, add a new Android app
+- set the package you previously set in the build.gradle file
+- download the `google-services.json` file and put it into `android/app/`
+
+**Configure dolby.io portal**
+
+- from the Firebase's project, navigate to the configuration,
+- in the `Cloud Messaging` tab, copy the `server key` and paste it inside your dolby.io project IAPi configuration page from [Dolby.io's dashboard](https://dolby.io/dashboard/applications/summary)
+
+*To receive invitation, always set your externalId when logging in the app, it's the identifier used to invite people and receive invitations*

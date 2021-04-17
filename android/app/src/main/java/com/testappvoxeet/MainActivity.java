@@ -1,6 +1,6 @@
 package com.testappvoxeet;
 
-import com.voxeet.specifics.RNVoxeetActivity
+import com.voxeet.specifics.RNVoxeetActivity;
 
 public class MainActivity extends RNVoxeetActivity {
 

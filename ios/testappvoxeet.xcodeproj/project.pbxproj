@@ -459,7 +459,7 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.voxeet.reactnative.testapp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.testappvoxeet;
 				PRODUCT_NAME = testappvoxeet;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
@@ -484,7 +484,7 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.voxeet.reactnative.testapp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.testappvoxeet;
 				PRODUCT_NAME = testappvoxeet;
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";

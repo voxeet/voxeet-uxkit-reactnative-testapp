@@ -44,7 +44,7 @@ export default class ParticipantView extends Component<Props, State> {
   }
 
   private onStreamUpdate = async (event: StreamAddedEvent|StreamUpdatedEvent|StreamRemovedEvent) => {
-    const { participantId } = event.user;
+    const { participantId } = event.participant;
 
     if(participantId === this.props.participant) {
       this.refreshStreams();
@@ -70,7 +70,8 @@ export default class ParticipantView extends Component<Props, State> {
   }
 
   private update = async (event: any) => {
-    const participants = await VoxeetEnvironment.participants();
+    await VoxeetEnvironment.participants();
+    this.participant = VoxeetEnvironment.participant(this.props.participant);
     this.forceUpdate();
   }
 
@@ -85,21 +86,17 @@ export default class ParticipantView extends Component<Props, State> {
     const cameraStream = streams ? streams.find(s => s.type == "Camera") : undefined;
     const { hasAudioTracks, hasVideoTracks } = cameraStream || {hasAudioTracks: false, hasVideoTracks: false};
 
-    console.warn("cameraStream");
+    console.warn("participant", this.participant);
     if(!this.participant) return null;
     return <Card title={this.participant.name || this.participant.participantId || ""}>
       <View style={styles.main}>
+        { this.avatar() }
         <View style={{flexDirection: "column", flex: 1}}>
-          <View style={styles.main}>
-            { this.avatar() }
-            <View style={{flexDirection: "column"}}>
-              <Text>Name: {this.participant.name}</Text>
-              <Text>hasAudioTracks: {`${!!hasAudioTracks}`}</Text>
-              <Text>hasVideoTracks: {`${!!hasVideoTracks}`}</Text>
-            </View>
-          </View>
+          <Text>Name: {this.participant.name}</Text>
+          <Text>hasAudioTracks: {`${!!hasAudioTracks}`}</Text>
+          <Text>hasVideoTracks: {`${!!hasVideoTracks}`}</Text>
         </View>
-        <VideoView style={{width: 100, height: 200}} ref={(ref: VideoView|null) => this.setVideoView(ref)} />
+        <VideoView style={{flex: 1, height: 100, backgroundColor: "black"}} ref={(ref: VideoView|null) => this.setVideoView(ref)} />
       </View>
     </Card>
   }

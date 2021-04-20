@@ -10,6 +10,7 @@
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx"
   },
   "dependencies": {
+    "@react-native-community/async-storage": "^1.12.1",
     "@voxeet/react-native-voxeet-conferencekit": "git://github.com/voxeet/voxeet-uxkit-reactnative.git#develop",
     "eventemitter2": "^6.4.4",
     "react": "17.0.1",

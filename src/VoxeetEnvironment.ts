@@ -1,4 +1,4 @@
-import { ConferenceStatusUpdatedEvent, ConferenceUser, VoxeetEvents, VoxeetSDK } from "@voxeet/react-native-voxeet-conferencekit";
+import { ConferenceStatusUpdatedEvent, ConferenceParticipant, VoxeetEvents, VoxeetSDK } from "@voxeet/react-native-voxeet-conferencekit";
 import { ConferenceStatus } from "@voxeet/react-native-voxeet-conferencekit/dist/events/ConferenceStatusUpdatedEvent";
 import { ParticipantAddedEvent, ParticipantUpdatedEvent, StreamAddedEvent, StreamUpdatedEvent, StreamRemovedEvent } from "@voxeet/react-native-voxeet-conferencekit/dist/events/ConferenceUsersEvent";
 import Participant from "@voxeet/react-native-voxeet-conferencekit/dist/types/Participant";
@@ -98,13 +98,14 @@ class VoxeetEnvironment {
     this.emit("connect", { sdk: VoxeetSDK });
   }
 
-  public connect = async (participant: ConferenceUser) => {
+  public connect = async (participant: ConferenceParticipant) => {
     await VoxeetSDK.connect(participant);
     this._connected = true;
     this.emit("connect", { sdk: VoxeetSDK });
   }
 
   private onConferenceStatus = (status: ConferenceStatusUpdatedEvent) => {
+    console.warn("VoxeetEnvironment onConferenceStatus", status);
     try {
       var current = this.statusMatching(["JOINED", "LEAVING"]);
       if(!status.conferenceId || status.conferenceId.length == 0) { //if no conferenceId

@@ -1,10 +1,10 @@
 import React, { Component } from "react";
-import { Alert, Switch, Text, View } from "react-native";
+import { View } from "react-native";
 import { Button } from "react-native-material-ui";
 import Card from "../ui/Card";
 import VoxeetEnvironment from "../VoxeetEnvironment";
 import { TextField } from 'rn-material-ui-textfield';
-import { ConferenceStatusUpdatedEvent, ConferenceUser, JoinOptions, VoxeetSDK } from "@voxeet/react-native-voxeet-conferencekit";
+import { ConferenceStatusUpdatedEvent, VoxeetSDK } from "@voxeet/react-native-voxeet-conferencekit";
 import { UserType } from "@voxeet/react-native-voxeet-conferencekit/dist/types/JoinConference";
 import CustomSwitch from "../ui/CustomSwitch";
 import { inConference } from "../Utils";

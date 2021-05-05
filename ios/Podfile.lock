@@ -269,19 +269,21 @@ PODS:
     - React-cxxreact (= 0.64.0)
     - React-jsi (= 0.64.0)
     - React-perflogger (= 0.64.0)
+  - RNCAsyncStorage (1.12.1):
+    - React-Core
   - RNPermissions (3.0.1):
     - React-Core
   - RNVectorIcons (8.1.0):
     - React-Core
-  - SDWebImage (5.11.0):
-    - SDWebImage/Core (= 5.11.0)
-  - SDWebImage/Core (5.11.0)
-  - voxeet-uxkit-reactnative (0.2.11-beta13):
+  - SDWebImage (5.11.1):
+    - SDWebImage/Core (= 5.11.1)
+  - SDWebImage/Core (5.11.1)
+  - voxeet-uxkit-reactnative (0.2.11):
     - React
-    - VoxeetSDK (= 3.1.4)
-    - VoxeetUXKit (= 1.4.6)
-  - VoxeetSDK (3.1.4)
-  - VoxeetUXKit (1.4.6):
+    - VoxeetSDK (= 3.1.5)
+    - VoxeetUXKit (= 1.4.7)
+  - VoxeetSDK (3.1.5)
+  - VoxeetUXKit (1.4.7):
     - SDWebImage (~> 5.0)
     - VoxeetSDK (~> 3.0)
   - Yoga (1.14.0)
@@ -317,6 +319,7 @@ DEPENDENCIES:
   - React-RCTVibration (from `../node_modules/react-native/Libraries/Vibration`)
   - React-runtimeexecutor (from `../node_modules/react-native/ReactCommon/runtimeexecutor`)
   - ReactCommon/turbomodule/core (from `../node_modules/react-native/ReactCommon`)
+  - "RNCAsyncStorage (from `../node_modules/@react-native-community/async-storage`)"
   - RNPermissions (from `../node_modules/react-native-permissions`)
   - RNVectorIcons (from `../node_modules/react-native-vector-icons`)
   - "voxeet-uxkit-reactnative (from `../node_modules/@voxeet/react-native-voxeet-conferencekit`)"
@@ -386,6 +389,8 @@ EXTERNAL SOURCES:
     :path: "../node_modules/react-native/ReactCommon/runtimeexecutor"
   ReactCommon:
     :path: "../node_modules/react-native/ReactCommon"
+  RNCAsyncStorage:
+    :path: "../node_modules/@react-native-community/async-storage"
   RNPermissions:
     :path: "../node_modules/react-native-permissions"
   RNVectorIcons:
@@ -425,12 +430,13 @@ SPEC CHECKSUMS:
   React-RCTVibration: 0fd6b21751a33cb72fce1a4a33ab9678416d307a
   React-runtimeexecutor: cad74a1eaa53ee6e7a3620231939d8fe2c6afcf0
   ReactCommon: cfe2b7fd20e0dbd2d1185cd7d8f99633fbc5ff05
+  RNCAsyncStorage: cb9a623793918c6699586281f0b51cbc38f046f9
   RNPermissions: eb94f9fdc0a8ecd02fcce0676d56ffb1395d41e1
   RNVectorIcons: 31cebfcf94e8cf8686eb5303ae0357da64d7a5a4
-  SDWebImage: 7acbb57630ac7db4a495547fb73916ff3e432f6b
-  voxeet-uxkit-reactnative: 97a388f32096574eba437e33f5e4aa6c2bd1eacb
-  VoxeetSDK: 029ebd9ff0d0dbffd868bdf20c43d0fab1622ac7
-  VoxeetUXKit: 91953b2b6d83fbb2aa57761ea6d43be095d1347e
+  SDWebImage: a7f831e1a65eb5e285e3fb046a23fcfbf08e696d
+  voxeet-uxkit-reactnative: 83d497bdb81731014ec4bea872316c040d432a45
+  VoxeetSDK: acda777eff5b56f23989f1b855ee1b7bd2455b24
+  VoxeetUXKit: 74530d073abc3ed7fc96aa5b17cea84f471702aa
   Yoga: 8c8436d4171c87504c648ae23b1d81242bdf3bbf
 
 PODFILE CHECKSUM: 4a9ee6ae0174314da9ad7fa320f97eb4d66afde9

@@ -21,5 +21,6 @@
             <category android:name="android.intent.category.LAUNCHER" />
         </intent-filter>
       </activity>
+      <meta-data android:name="voxeet_incoming_accepted_class" android:value="com.testappvoxeet.MainActivity" />
     </application>
 </manifest>

@@ -8,6 +8,7 @@ import { ConferenceStatusUpdatedEvent, VoxeetSDK } from "@voxeet/react-native-vo
 import { UserType } from "@voxeet/react-native-voxeet-conferencekit/dist/types/JoinConference";
 import CustomSwitch from "../ui/CustomSwitch";
 import { inConference } from "../Utils";
+import AsyncStorage from "@react-native-community/async-storage";
 
 export interface Props {
 
@@ -23,6 +24,10 @@ export default class JoinConference extends Component<Props, State> {
   public state: State = { willJoinAsUser: true };
 
   componentDidMount() {
+    AsyncStorage.getItem("conferenceAlias").then(conferenceAlias => {
+      !!conferenceAlias && this.setState({conferenceAlias})
+    });
+
     VoxeetEnvironment.addListener("connect", this.onRefresh);
     VoxeetEnvironment.addListener("ConferenceStatusUpdatedEvent", this.onStatus);
   }
@@ -48,6 +53,7 @@ export default class JoinConference extends Component<Props, State> {
       const { willJoinAsUser, conferenceAlias } = this.state;
       if(!conferenceAlias) throw "Missing conferenceAlias";
 
+      await AsyncStorage.setItem("conferenceAlias", conferenceAlias);
       const conference = await VoxeetSDK.create({alias: conferenceAlias});
       if(!conference.conferenceId) throw "Invalid VoxeetSDK.create result : no conferenceId";
 
@@ -88,7 +94,7 @@ export default class JoinConference extends Component<Props, State> {
   }
 
   render() {
-    const { willJoinAsUser } = this.state;
+    const { willJoinAsUser, conferenceAlias } = this.state;
 
     const connected = VoxeetEnvironment.connected;
     var canJoin = connected && this.canJoin();
@@ -103,6 +109,7 @@ export default class JoinConference extends Component<Props, State> {
         <TextField
           disabled={!canJoin}
           label="conferenceAlias"
+          value={conferenceAlias || ""}
           onChangeText={(conferenceAlias: string) => this.setState({conferenceAlias})} />
 
         <CustomSwitch 

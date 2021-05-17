@@ -44,7 +44,9 @@ public class MainApplication extends Application implements ReactApplication {
     super.onCreate();
     SoLoader.init(this, /* native exopackage */ false);
 
-    SoLoader.loadLibrary("dvclient");
-    SoLoader.loadLibrary("MediaEngineJni");
+    //// normally already implemented in the latest develop/master commits inside the RN SDK repository
+    //// if a crash occurs, please open a ticket at http://github.com/voxeet/voxeet-uxkit-reactnative/issues
+    //SoLoader.loadLibrary("dvclient");
+    //SoLoader.loadLibrary("MediaEngineJni");
   }
 }

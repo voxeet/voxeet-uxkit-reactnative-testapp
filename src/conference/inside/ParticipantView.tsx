@@ -59,10 +59,12 @@ export default class ParticipantView extends Component<Props, State> {
 
       const cameraStream = streams ? streams.find(s => s.type == "Camera") : undefined;
 
-      if(this.videoView && cameraStream) {
+      if(!this.videoView) return;
+      if(cameraStream && cameraStream.hasVideoTracks) {
         const user = new Participant(participant); //we only need a pointer to the native
-        if(cameraStream.hasVideoTracks) await this.videoView.attach(user, cameraStream);
-        else await this.videoView.unattach();
+        await this.videoView.attach(user, cameraStream);
+      } else {
+        await this.videoView.unattach();
       }
     } catch(e) {
       console.error("onStreamUpdate error", e);
@@ -86,7 +88,6 @@ export default class ParticipantView extends Component<Props, State> {
     const cameraStream = streams ? streams.find(s => s.type == "Camera") : undefined;
     const { hasAudioTracks, hasVideoTracks } = cameraStream || {hasAudioTracks: false, hasVideoTracks: false};
 
-    console.warn("participant", this.participant);
     if(!this.participant) return null;
     return <Card title={this.participant.name || this.participant.participantId || ""}>
       <View style={styles.main}>
@@ -96,7 +97,7 @@ export default class ParticipantView extends Component<Props, State> {
           <Text>hasAudioTracks: {`${!!hasAudioTracks}`}</Text>
           <Text>hasVideoTracks: {`${!!hasVideoTracks}`}</Text>
         </View>
-        <VideoView style={{flex: 1, height: 100, backgroundColor: "black"}} ref={(ref: VideoView|null) => this.setVideoView(ref)} />
+        <VideoView key={"video"} style={{width: 100, height: 200, backgroundColor: "black"}} scaleType={"fill"} ref={(ref: VideoView|null) => this.setVideoView(ref)} />
       </View>
     </Card>
   }

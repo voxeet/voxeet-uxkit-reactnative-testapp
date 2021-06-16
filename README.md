@@ -26,22 +26,11 @@ npm install
 
     If you want to support CallKit (receiving incoming call when application is killed) with VoIP push notification, enable 'Push Notifications' (you will need to upload your [VoIP push certificate](https://developer.apple.com/account/ios/certificate/) to the [Dolby.io Dashboard](https://dolby.io/dashboard/)).
 
-3. Open a terminal and go to ios
+3. Open a terminal and use the script 
     ```bash
-    pod install
+    bash ./pod.sh
     ```
     
-    There is a known bug from the library FBReactNativeSpec. You have to go into your `Pods` project in Xcode workspace, select `FBReactNativeSpec` target, "Build Phases" section, drag and drop "[CP-User] Generate Specs" step just under "Dependencies" step (2nd position). You have to do this step after every pod install or pod update.
-
-### Android
-
-
-Fix an incompatibility with current react native embedded c++_shared : patch the AAR directly to remove the outdated libc++_shared via
-
-```
-bash ./node_modules/@voxeet/react-native-voxeet-conferenceki/patch.react.aar.sh
-```
-
 ## Android - Enable FCM
 
 **Create a Firebase project**

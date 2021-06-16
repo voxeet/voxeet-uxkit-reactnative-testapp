@@ -11,14 +11,15 @@
   },
   "dependencies": {
     "@react-native-community/async-storage": "^1.12.1",
-    "@voxeet/react-native-voxeet-conferencekit": "git://github.com/voxeet/voxeet-uxkit-reactnative.git#develop",
+    "@voxeet/react-native-voxeet-conferencekit": "github:voxeet/voxeet-uxkit-reactnative#develop",
     "eventemitter2": "^6.4.4",
     "react": "17.0.1",
     "react-native": "0.64.0",
     "react-native-material-ui": "^1.30.1",
     "react-native-permissions": "^3.0.1",
     "react-native-vector-icons": "^8.1.0",
-    "rn-material-ui-textfield": "^1.0.3"
+    "rn-material-ui-textfield": "^1.0.3",
+    "sharp": "^0.23.0"
   },
   "devDependencies": {
     "@babel/core": "^7.12.9",

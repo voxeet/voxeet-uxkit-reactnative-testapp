@@ -19,7 +19,7 @@
     "react-native-permissions": "^3.0.1",
     "react-native-vector-icons": "^8.1.0",
     "rn-material-ui-textfield": "^1.0.3",
-    "sharp": "^0.23.0"
+    "sharp": "^0.30.5"
   },
   "devDependencies": {
     "@babel/core": "^7.12.9",
